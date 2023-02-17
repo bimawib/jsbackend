@@ -204,3 +204,32 @@ do{
     console.log("istri saya ada-"+istri);
     istri++;
 } while(istri < 3);
+
+
+/// DATA STRUCTURE
+
+// Object
+let identitas = {
+    nama : "Bima",
+    nim : 175080607111023,
+    isGraduated : true
+} // object terdiri dari pasangan key - value
+console.log(identitas.nim);
+
+const bajuSaya = {
+    jumlah: 13,
+    warna: "ungu",
+    gambar: "kucing",
+}
+console.log(bajuSaya);
+
+bajuSaya.gambar = "Uruca"; // mengubah nilai dalam object tinggal panggil lalu gunakan =
+console.log(bajuSaya);
+
+bajuSaya.apaBagus = true; // 
+console.log(bajuSaya);
+// ketika mengubah object, jika key value sudah ada, maka nilainya akan diganti. namun jika belum ada maka key value baru akan ditambahkan ke dalam object
+
+delete bajuSaya.warna;
+console.log(bajuSaya);
+
