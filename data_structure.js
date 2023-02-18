@@ -125,4 +125,42 @@ const kucing = {
 const {nama: name, umur: age} = kucing; // disini kucing.umur di destructure dan di assign ke nama var baru yaitu age
 console.log(age);
 
+// Destructure ARRAY
+const blueLockTeam = ["Bastard Munchen","Manshine City","Ubers","PXG"];
+
+const [firstTeam,secondTeam,thirdTeam,fourthTeam] = blueLockTeam;
+console.log(firstTeam);
+
+const BLRANK = [
+    "Barou",
+    "Nagi",
+    "Bachira",
+    "Chigiri",
+    "Isagi"
+];
+const [,,,,fifthRanking] = BLRANK; // hanya declare satu variable local saja untuk value array di index tertentu
+console.log(fifthRanking);
+
+// destructure to assigned variable
+let favPlayer = "Chigiri"; // this is declaring local var
+let hatePlayer = "Karasu";
+
+[favPlayer,hatePlayer] = BLRANK;// it follow the array index
+console.log(favPlayer);
+
+let bastardTransfer = "Isagi";
+let uberTransfer = "Barou";
+
+[bastardTransfer, uberTransfer] = [uberTransfer, bastardTransfer]; // destructure to swap between 2 value
+console.log(uberTransfer);
+
+let jokiApex = [
+    "Bronze",
+    "Silver",
+    "Gold",
+    "Platinum",
+    "Diamond"
+]
+const [bronze,silver,gold,platinum,diamond,master = "Master (Unavailable)"] = jokiApex;
+console.log(master); // assign default value
 
