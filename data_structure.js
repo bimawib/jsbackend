@@ -82,3 +82,47 @@ const profileUruca = {
 }; // penggunaan spread operator untuk combine object
 
 console.log(profileUruca);
+
+
+// Destructuring Object
+
+const cute = {
+    name: "Uruca",
+    origin: "Japan",
+    age: 22,
+}
+
+// destructure while DECLARE variable
+const {origin} = cute; // destructure object cute, tidak perlu semua variabel dimasukkan ke dalam {}
+console.log(origin);
+
+// destructure ASSIGNED variable
+const namae = {
+    firstName: "Hinano",
+    lastName: "Tachibana",
+} // disini objectnya sudah diinstance ke variable namae
+
+// disini kita buat variable yg keynya sama dengan property namae
+let firstName = "Hi";
+let lastName = "Chan";
+
+({firstName,lastName} = namae); // destructure tanpa harus declare variable. istilahnya kita overwrite variable yg sudah ada dengan value dari object namae
+console.log(firstName);
+
+const {isCute} = cute; // jika properti tidak ada di object maka nilai defaultnya adalah undefined, kecuali jika didefinisikan default valuenya
+console.log(isCute);
+
+// setelah didefinisikan default value
+const {isKawaii = true} = cute;
+console.log(isKawaii); // akan menghasilkan true karena default valuenya true dan property isKawaii tidak ada di obj
+
+// assign destructured property to different variable name
+const kucing = {
+    nama: "Bolu",
+    umur: 13,
+}
+
+const {nama: name, umur: age} = kucing; // disini kucing.umur di destructure dan di assign ke nama var baru yaitu age
+console.log(age);
+
+
