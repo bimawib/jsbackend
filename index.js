@@ -233,3 +233,26 @@ console.log(bajuSaya);
 delete bajuSaya.warna;
 console.log(bajuSaya);
 
+// Array
+let myArray = ["Uruca", 13, false];
+console.log(myArray[1]);
+console.log("Jumlah properti myArray adalah "+myArray.length);
+
+myArray.push("Kawaii"); // menambahkan data ke index terakhir array
+console.log(myArray);
+
+myArray.pop(); // untuk mengeluarkan data dari index terakhir array
+console.log(myArray);
+
+myArray.shift();
+console.log(myArray); // shift untuk mengeluarkan data dari index pertama array
+
+myArray.unshift("Uruha"); // unshift untuk menambahkan data ke index pertama array
+console.log(myArray);
+
+delete myArray[1];
+console.log(myArray);
+
+myArray.splice(1,1); // dengan splice posisi indexnya juga akan terhapus sehingga elemen setelahnya akan maju
+myArray[1] = true;
+console.log(myArray);
