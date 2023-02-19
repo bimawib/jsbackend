@@ -4,9 +4,11 @@
 let identitas = {
     nama : "Bima",
     nim : 175080607111023,
-    isGraduated : true
+    isGraduated : true,
+    "pendidikan terakhir": "sarjana",
 } // object terdiri dari pasangan key - value
 console.log(identitas.nim);
+console.log(identitas["pendidikan terakhir"]);
 
 const bajuSaya = {
     jumlah: 13,
@@ -178,5 +180,11 @@ blFormation.set("Goalkeeper","Gagamaru"); // men-set value
 console.log(blFormation.size); // menghitung banyak elemen
 console.log(blFormation.get("Goalkeeper"));
 // make sure to use .set() and .get() for map
+
+// SET
+const numberSet = new Set([1,3,13,2,5,2]);
+console.log(numberSet);
+numberSet.add(1976); // accept 1 argument to add to set
+console.log(numberSet);
 
 
