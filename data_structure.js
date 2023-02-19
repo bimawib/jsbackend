@@ -162,5 +162,21 @@ let jokiApex = [
     "Diamond"
 ]
 const [bronze,silver,gold,platinum,diamond,master = "Master (Unavailable)"] = jokiApex;
-console.log(master); // assign default value
+console.log("I want to joki "+master); // assign default value
+
+// MAP
+const blFormation = new Map([
+    ["Midfielder","Isagi Yoichi"],
+    [11, true],
+    ["Striker","Chigiri Hyouma"]
+]); // map tersebut menyimpan elemen yang berisi ["Key","Value"]
+
+console.log(blFormation);
+console.log(blFormation.size);
+console.log(blFormation.get("Striker")); // mengambil value
+blFormation.set("Goalkeeper","Gagamaru"); // men-set value
+console.log(blFormation.size); // menghitung banyak elemen
+console.log(blFormation.get("Goalkeeper"));
+// make sure to use .set() and .get() for map
+
 
