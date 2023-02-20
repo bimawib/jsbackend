@@ -86,4 +86,15 @@ function scopeFunction(){
 console.log(thisIsGlobalFunction);
 console.log(scopeFunction());
 
+// CLOSURE
+function parentFunction(){
+    let cutestStreamer = "Uruca";
 
+    function childFunction(){
+        console.log(cutestStreamer);
+    }
+    // this is a closure, can access its parent variable
+    childFunction();
+}
+
+parentFunction();
