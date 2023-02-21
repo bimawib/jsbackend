@@ -238,4 +238,93 @@ console.log(urucaBaby instanceof TwitchStreamer); // false
 console.log(urucaBaby instanceof ContentCreator); // true
 // instance of untuk mengecek inheritance dari suatu class
 
+// OVERRIDING
+class Warung {
+    constructor(nama){
+        this.nama = nama;
+    }
+    favorit(){
+        console.log("Semua makanan disini ENAK!");
+    }
+}
+class WarungBakso extends Warung{
+    constructor(nama,menuFavorit){
+        super(nama);
+        this.menuFavorit = menuFavorit;
+    } // constructor overriding
+    favorit(){
+        console.log(`Makanan favorit di ${this.nama} adalah ${this.menuFavorit}`);
+    } // method overriding
+}
 
+const warungBiasa = new Warung("Warung Komarudin");
+console.log(warungBiasa);
+warungBiasa.favorit();
+
+const warungBasoPK = new WarungBakso("PK","Bakso KNTL");
+console.log(warungBasoPK);
+warungBasoPK.favorit();
+
+// OBJECT COMPOSITION
+class Developer{
+    constructor(name){
+        this.name = name;
+    }
+    commitChanges(){
+        console.log(`${this.name} is commiting changes`);
+    }
+}
+
+function canBuildFrontEnd(developer){
+    return{
+        buildFrontEnd: () => {
+            console.log(`${developer.name} is building front end part`);
+        }
+    }
+}
+
+function canBuildBackEnd(developer){
+    return{
+        buildBackEnd: () => {
+            console.log(`${developer.name} is building back end part`);
+        }
+    }
+}
+
+function canDeployApp(developer){
+    return{
+        deployApp: () => {
+            console.log(`${developer.name} is deploying app`);
+        }
+    }
+}
+
+function createFrontEndDeveloper(name){
+    const developer = new Developer(name);
+    return Object.assign(developer,canBuildFrontEnd(developer));
+}
+function createBackEndDeveloper(name){
+    const developer = new Developer(name);
+    return Object.assign(developer,canBuildBackEnd(developer));
+}
+function createDevOps(name){
+    const developer = new Developer(name);
+    return Object.assign(developer,canDeployApp(developer));
+}
+function createFullStackDeveloper(name){
+    const developer = new Developer(name);
+    return Object.assign(developer,canBuildFrontEnd(developer),canBuildBackEnd(developer),canDeployApp(developer));
+}
+
+const juniorDev = createFullStackDeveloper("Bima");
+console.log(juniorDev);
+juniorDev.commitChanges();
+juniorDev.deployApp();
+
+// BUILT IN CLASS
+const tanggal = new Date();
+const timeInJkt = tanggal.toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' });
+console.log(timeInJkt);
+
+const arrayBaru = new Array(1,2,3,4,5);
+console.log(arrayBaru);
