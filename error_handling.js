@@ -103,3 +103,10 @@ try{
         console.log(error.stack);
     }
 }
+
+let sus = "SUSSY";
+if(typeof sus !== "number"){
+    console.log("BUKAN NUMBER");
+}else{
+    console.log("TIPE NUMBER");
+}
