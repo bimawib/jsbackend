@@ -5,15 +5,15 @@ console.log("Siap disajikan selagi hangat");
 
 // COMMON JS
 // IMPORT ONLY 1 VALUE
-// const coffeeStock = require('./state');
+// const coffeeStock = require('./statemodule');
 // IMPORT > 1 VALUE WITH DESTRUCTURING OBJECT
-// const {coffeeStock, isCoffeeMachineReady} = require('./state');
+// const {coffeeStock, isCoffeeMachineReady} = require('./statemodule');
 
 // ES6 MODULE
 // IMPORT 1 VALUE
-// import coffeeStock from "./state.js";
+// import coffeeStock from "./statemodule.js";
 // IMPORT > 1 VALUE WITH DESTRUCTURING OBJECT
-import { coffeeStock,isCoffeeMachineReady } from "./state.js";
+import { coffeeStock,isCoffeeMachineReady } from "./statemodule.js";
 
 const makeCoffee = (origin, weight) => {
     if(coffeeStock[origin] >= weight){
